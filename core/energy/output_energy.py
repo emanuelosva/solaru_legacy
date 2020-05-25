@@ -156,9 +156,9 @@ def _get_num_modules_horizontal(width, heigth, width_module,
 
     # Parallel rows:
     # Takes acount the minimun distance between row due the shadows.
-    height_system = heigth_module * np.sin(np.degrees(latitude))
-    large_system = heigth_module * np.cos(np.degrees(latitude))
-    separation_row = height_system/np.tan(np.degrees(61-latitude))
+    height_system = heigth_module * np.sin(np.radians(latitude))
+    large_system = heigth_module * np.cos(np.radians(latitude))
+    separation_row = height_system/np.tan(np.radians(61-latitude))
     total_separation_row = separation_row + large_system
 
     num_par = _special_round(heigth/total_separation_row)
@@ -175,11 +175,11 @@ def _get_num_modules_vertical(width, heigth, width_module,
     # Modules in serie
     num_serie = _special_round(width/heigth_module)
 
-    # Parallel rowss:
+    # Parallel rows:
     # Takes acount the minimun distance between row due the shadows.
-    height_system = width_module * np.sin(np.degrees(latitude))
-    large_system = width_module * np.cos(np.degrees(latitude))
-    separation_row = height_system/np.tan(np.degrees(61-latitude))
+    height_system = width_module * np.sin(np.radians(latitude))
+    large_system = width_module * np.cos(np.radians(latitude))
+    separation_row = height_system/np.tan(np.radians(61-latitude))
     total_separation_row = separation_row + large_system
 
     num_par = _special_round(heigth/total_separation_row)
