@@ -25,7 +25,7 @@ def solar_radiation(latitude, longitude):
         - Meteorological data by hour of the TMY.
         - Solar radiation by hour adjusted at plane of array.
         - Absolute airmass by ahour.
-        - The angle of incidence at best array orientatiom. 
+        - The angle of incidence at best array orientation. 
     """
 
     # Get meteorological an solar info
