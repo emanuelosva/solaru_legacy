@@ -76,3 +76,5 @@ class DataToCalcForm(FlaskForm):
         'Costo del kWh [MXN]',
         validators=[DataRequired(), is_positive, is_numeric]
     )
+
+    submit = SubmitField('Calcular')
