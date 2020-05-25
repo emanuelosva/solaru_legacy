@@ -9,6 +9,9 @@ import pandas as pd
 from requests import HTTPError
 from timezonefinder import TimezoneFinder
 
+# Manage error
+ERROR_PVGIS_REQUEST = False
+
 
 # Models
 class PvgisRequest:
@@ -26,6 +29,9 @@ class PvgisRequest:
         self.error_pvgis_request = None
 
     def get(self):
+
+        global ERROR_PVGIS_REQUEST
+
         try:
             # Request to PvGIS API.
             pvg = get_pvgis_tmy(
@@ -35,7 +41,7 @@ class PvgisRequest:
         except Exception:
             # Rquest to a secure place
             pvg = get_pvgis_tmy(lat=19, lon=-100)
-            self.error_pvgis_request = True
+            ERROR_PVGIS_REQUEST = True
 
         # Get only util data.
         self.data = pvg[0]

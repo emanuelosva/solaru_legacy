@@ -78,3 +78,29 @@ class DataToCalcForm(FlaskForm):
     )
 
     submit = SubmitField('Calcular')
+
+    def is_valid(self):
+        """
+        Valid forms.
+        """
+
+        if self.validate_on_submit():
+            return True
+        else:
+            return False
+
+    def get_data(self):
+        """
+        Get all data and returns it.
+        """
+
+        data = {
+            'latitude': self.latitude.data,
+            'longitude': self.longitude.data,
+            'width': self.width.data,
+            'height': self.height.data,
+            'kwh_cost': self.kwh_cost.data,
+            'mean_consume': self.mean_consume.data,
+        }
+
+        return data
