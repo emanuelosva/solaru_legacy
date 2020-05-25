@@ -1,0 +1,337 @@
+<!-- Post-Template -->
+
+{% extends 'base.html' %}
+{% import 'components/macro.html' as macro %}
+
+
+{% block content %}
+<!-- /Main info -->
+<section id="app">
+    <div class="container-fluid pr-2 pl-2 pr-md-4 pl-md-4 pl-lg-5 pr-lg-5">
+        <div class="container"></div>
+        <div class="row">
+            <div class="col-12 col-md-4 col-xl-3">
+                <div class="card card-imput pb-1 p-4 mb-3">
+                    {% if calc.is_active %}
+                    <div class="container p-0 text-center">
+                        <h3 class="m-0">Resultados</h3>
+                        <div class="text-muted">(Anual)</div>
+                    </div>
+                    <div class="container text-left mt-2">
+                        <p>Esta es la oportunidad que el sol te presenta,
+                            conoce el potencial solar de tu hogar:</p>
+                    </div>
+                    <div class="container d-flex flex-column p-1">
+
+                        {{ macro.render_data_form('Energía producida:', calc.total_output, ' kWh') }}
+                        {{ macro.render_data_form('Ahorro potencial:', calc.total_saving, ' MXN') }}
+                        {{ macro.render_data_form('Retorno de inversión:', calc.period_return, ' Años') }}
+                        {{ macro.render_data_form('CO2 evitado:', calc.co2, ' kg') }}
+
+                        <a class="btn bg-solaru p-1" href="{{ url_for('index') }}">
+                            Nuevo cálculo
+                        </a>
+                        <div class="container text-center mt-3">
+                            <button class="more-info" data-toggle="modal" data-target="#extra-info-modal">
+                                Más información
+                            </button>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% if calc.is_active %}
+                <div class="card pb-1 p-4 mb-3 d-none d-md-flex">
+                    <div class="container text-center">
+                        <h5 class="mb-4">Información adicional</h5>
+                    </div>
+                    <div class="container text-left">
+                        <p>El cálculo es aproximado, pues se contemplan
+                            modulos e inversores típicos es necesario
+                            que contemplemos más variables para ofrecerte
+                            la mejor solución adaptada a tus necesidades.
+                        </p>
+                    </div>
+                    <div class="container mt-2 p-1 d-flex justify-content-around">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="btn btn-info bg-solaru">Ya quiero mi sitema</a>
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn btn-info btn-outline-light">Solo echaré un vistazo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-8 col-xl-9">
+                {% if calc.is_active %}
+                <div class="row">
+                    <div class="col-12 col-md-7 col-lg-8">
+                        <div id="savings-plot"></div>
+                    </div>
+                    <div class="col-12 col-md-5 col-lg-4">
+                        <div class="container text-center">
+                            <div id="savings-pie" class="plot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col p-5 pt-0">
+                        <div id="energy-production"></div>
+                    </div>
+                </div>
+                <div class="card pb-1 p-4 mb-3 d-flex d-md-none">
+                    <div class="container text-center">
+                        <h5 class="mb-4">Información adicional</h5>
+                    </div>
+                    <div class="container text-left">
+                        <p>El cálculo es aproximado, pues se contemplan
+                            modulos e inversores típicos es necesario
+                            que contemplemos más variables para ofrecerte
+                            la mejor solución adaptada a tus necesidades.
+                        </p>
+                    </div>
+                    <div class="container mt-2 p-1 d-flex justify-content-around">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="btn btn-info bg-solaru">
+                                    Ya quiero mi sitema
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn btn-info btn-outline-light">
+                                    Solo echaré un vistazo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Main info -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="extra-info-modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalLabel">Tu sistema</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Número de modulos:</h5>
+                <p class="text-muted">{{ calc.num_modules }} de silicio mono cristalino.</p>
+                <p class="text-muted">Modelo: {{ calc.name_modules }}</p>
+                <h5>Número de inversores:</h5>
+                <p class="text-muted">{{ calc.num_inverters }} modelo: {{ calc.name_inverter }}</p>
+                <h5>Costo del sistema:</h5>
+                <p class="text-muted">{{ calc.cost_system }} MXN.</p>
+                <br>
+                <p class="text-muted">El sistema está dimensionado por el modelo
+                    de espacio disponible, es decir que se contemplan todos los paneles
+                    solares que caben dentro del área que definiste por los parámetros
+                    <strong>largo</strong> y <strong>ancho</strong> considerando la distribución,
+                    inclinación y orientación óptimas.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+{% endblock  %}
+
+
+<!-- Scripts for Plot -->
+{% block scripts %}
+{{ super() }}
+
+<!-- Energy-Production -->
+<script type="text/javascript">
+    const energy_output = {{ calc.output }}
+    $(function () {
+        $('#energy-production').highcharts({
+            chart: {
+                type: 'line',
+                backgroundColor: 'transparent'
+            },
+            title: {
+                text: 'Energía producida por tu sistema',
+                x: -20, //center
+                style: {
+                    color: "white"
+                },
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+                    'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+            },
+            yAxis: {
+                title: {
+                    text: 'Energía (kWh)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 2,
+                    color: 'white'
+                }]
+            },
+            tooltip: {
+                valueSuffix: 'kWh'
+            },
+            legend: {
+                enabled: false
+            },
+            series: [
+                {
+                    marker: {
+                        symbol: 'circle',
+                    },
+                    data: energy_output,
+                    // color: '#ff8267'
+                    color: '#eb8726'
+                }]
+        });
+    });
+</script>
+
+<!-- Savings -->
+<script type="text/javascript">
+    const savings = {{ calc.savings }}
+    $(function () {
+        $('#savings-plot').highcharts({
+            chart: {
+                type: 'line',
+                backgroundColor: 'transparent'
+            },
+            title: {
+                text: 'Ahorro Potencial (MXN.)',
+                x: -20, //center,
+                style: {
+                    color: "white"
+                },
+            },
+            credits: {
+                enabled: false
+            },
+            subtitle: {
+                text: 'Lo que dejas de pagar por mes',
+                x: -20
+            },
+            legend: {
+                enabled: false
+            },
+            xAxis: {
+                categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+                    'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                style: {
+                    color: "white"
+                },
+            },
+            yAxis: {
+                title: {
+                    text: 'Ahorro (MXN)'
+                },
+                style: {
+                    color: "white"
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 2,
+                }]
+            },
+            tooltip: {
+                valueSuffix: 'MXN'
+            },
+            series: [
+                // {
+                //     name: 'Ventas',
+                //     data: [85.36, 92.55, 79.55, 125.25, 180.35, 210.55, 250.25, 260.55, 203.35, 108.35, 130.95, 90.65]
+                // },
+                {
+                    type: 'column',
+                    data: savings,
+                    color: '#d35a1d'
+                }]
+        });
+    });
+</script>
+
+<!-- SavingsPie -->
+<script type="text/javascript">
+    const network = {{ calc.energy_from_network }}
+    const sun = {{ calc.energy_from_sun }}
+    $(function () {
+        $('#savings-pie').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                backgroundColor: 'transparent',
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+            },
+            title: {
+                text: 'Consumo neto<br>anual',
+                style: {
+                    color: "white"
+                },
+            },
+            color: "white",
+            credits: {
+                enabled: false
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true,
+                    color: 'white'
+                },
+            },
+            legend: {
+                itemStyle: {
+                    'color': 'white',
+                    'fontSize': '14px'
+                }
+            },
+            tooltip: {
+                valueSuffix: 'kWh',
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
+            },
+            series: [{
+                name: 'Consumo',
+                colorByPoint: true,
+                data: [
+                    {
+                        name: 'De la Red',
+                        y: network,
+                        // color: '#ff832b'
+                        color: '#eb4f1e'
+                    }, {
+                        name: 'Del sol',
+                        y: sun,
+                        // color: '#a63210'
+                        color: '#17a2b8'
+                    }]
+            }]
+        });
+    });
+</script>
+
+{% endblock %}
+<!-- /Scripts for Plot -->

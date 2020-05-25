@@ -5,7 +5,8 @@ from .system_cost import (
     find_price_inverter,
     find_price_module,
     instalation_cost,
-    electrical_bos_cost
+    electrical_bos_cost,
+    structure_cost
 )
 
 
@@ -29,11 +30,11 @@ class FinancialCalc:
     def system_cost(self):
         self.find_cost()
         self.structure_cost = structure_cost(
-            modules=self.number_modules
+            num_modules=self.number_modules
         )
 
         self.electrical_cost = electrical_bos_cost(
-            modules=self.system[0]
+            num_modules=self.number_modules
         )
 
         self.system_cost_ = (

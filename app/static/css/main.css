@@ -70,9 +70,9 @@ html .body {
 }
 
 #app .card-imput .form-group {
-    margin-bottom: 5px display: grid;
+    margin-bottom: 5px;
+    display: grid;
     justify-content: left;
-    ;
 }
 
 #app .card-imput .form-control {
@@ -124,6 +124,15 @@ html .body {
 }
 
 /*  CARD */
+
+
+/* PLOTS */
+
+#app .plot {
+    margin: 0 auto;
+}
+
+/* PLOTS */
 
 
 /* MODAL */
