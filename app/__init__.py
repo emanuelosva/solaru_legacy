@@ -6,7 +6,7 @@ from flask_bootstrap import Bootstrap
 
 # Settings
 from .config import config
-settings_module = config.DevelopmentConfig
+settings_module = config.ProductionConfig
 
 
 def app_factory():
