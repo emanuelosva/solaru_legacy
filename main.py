@@ -21,7 +21,7 @@ def index():
         'data_form': data_form
     }
 
-    return "Hello World."
+    return render_template('base.html')
 
 
 if __name__ == "__main__":

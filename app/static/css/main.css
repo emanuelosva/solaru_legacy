@@ -1,0 +1,153 @@
+/* MAIN CSS FILES */
+
+/* BASE */
+html .body {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.bg-solaru {
+    background-image: linear-gradient(#EB8826, #EB4E1E);
+    color: white;
+}
+
+.separator {
+    width: 25px;
+    height: 3px;
+    background-image: linear-gradient(#2e2e2e, grey);
+}
+
+/* BASE */
+
+
+/* HEADER */
+#header {
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar img {
+    width: 95px;
+}
+
+.navbar {
+    background-image: linear-gradient(#EB8826, #EB4E1E) !important;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    height: 100%;
+}
+
+.navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* HEADER */
+
+
+/* CARD */
+
+#app .card {
+    border-radius: 5px;
+    background-color: black;
+}
+
+#app .card-imput .btn {
+    background-image: linear-gradient(#EB8826, #EB4E1E);
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#app .card-imput .form-group {
+    display: grid;
+    justify-content: left;
+    margin-bottom: 5px;
+}
+
+#app .card-imput .form-control {
+    margin-bottom: 0;
+}
+
+#app .card-imput .control-label {
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+#app .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#app .badge {
+    width: 100%;
+    padding: 12px 5px;
+    /* padding-right: 15px; */
+    margin-bottom: 1em;
+    background-color: white;
+    color: #6c757d;
+    font-size: 80%;
+    font-weight: 670;
+    border-radius: 2px;
+}
+
+#app .btn-info {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#app .help-block {
+    color: #eb6e22 !important;
+    text-decoration: underline !important;
+}
+
+#app .more-info {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#app .more-info:hover {
+    cursor: pointer;
+}
+
+/*  CARD */
+
+
+/* MODAL */
+
+.modal {
+    color: black;
+}
+
+/* MODAL */
+
+
+/* FOOTER */
+footer #footer {
+    background-image: linear-gradient(#EB8826, #EB4E1E);
+    color: white;
+}
+
+#footer #logo {
+    width: 110px;
+}
+
+#footer p {
+    font-size: small;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* FOOTER */
