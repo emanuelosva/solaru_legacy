@@ -1,0 +1,45 @@
+<!-- APP Template -->
+
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block content %}
+
+<section id="app">
+    <div class="container-fluid pr-2 pl-2 pr-md-4 pl-md-4 pl-lg-5 pr-lg-5">
+
+        <!-- Presentation -->
+        <h2 class="text-center">Bienvenido a SolaruApp®</h2>
+        <div class="container p-2 pr-md-5 pl-md-5">
+            <p class="pr-1 pl-1 pr-md-5 pl-md-5 text-left text-md-center mb-4">
+                Solaru app es una herramienta creada
+                para que tú puedas conocer de forma sencilla
+                cuales son todos los beneficios que puedes obtener
+                con un sistema fotovoltaico, no solo para ti,
+                sino también para el ambiente.
+            </p>
+        </div>
+
+        <!-- Form -->
+        <div class="container"></div>
+        <div class="row">
+            <div class="col-12 col-md-4 col-xl-3">
+                <div class="card card-imput pb-1 p-4 mb-3">
+                    <h4 class="text-center mb-3">Ingresa tu datos</h4>
+                    <div class="separator mb-2"></div>
+                    {{ wtf.quick_form(data_form) }}
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-xl-9">
+                <div class="container">
+                    <div class="container text-center mt-5">
+                        <h3>Descubre lo que el sol puede darte</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

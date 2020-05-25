@@ -21,7 +21,7 @@ def index():
         'data_form': data_form
     }
 
-    return render_template('base.html')
+    return render_template('index.html', **context)
 
 
 if __name__ == "__main__":
