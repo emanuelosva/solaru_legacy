@@ -1,0 +1,16 @@
+<!-- Macro for data form -->
+
+{% macro render_data_form(title, info, units) %}
+
+<div class="badge">
+    <div class="row">
+        <div class="col">
+            {{ title }}
+        </div>
+        <div class="col result">
+            {{info}} {{ units }}
+        </div>
+    </div>
+</div>
+
+{% endmacro %}
