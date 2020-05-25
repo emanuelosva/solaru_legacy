@@ -5,6 +5,7 @@ from flask import redirect, render_template, url_for, make_response
 
 # Local
 from app import app_factory
+from app.forms import DataToCalcForm
 
 # Create app
 app = app_factory()
@@ -14,6 +15,11 @@ app = app_factory()
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """Principal View."""
+
+    data_form = DataToCalcForm()
+    context = {
+        'data_form': data_form
+    }
 
     return "Hello World."
 
