@@ -1,4 +1,4 @@
 *.cpython-37.pyc
-app/config.py
-init.bat
 *.png
+app/config
+init.bat

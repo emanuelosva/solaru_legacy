@@ -5,7 +5,7 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 
 # Settings
-from . import config
+from .config import config
 settings_module = config.DevelopmentConfig
 
 
