@@ -151,10 +151,13 @@
 {% endblock  %}
 
 
-<!-- Scripts for Plot -->
+<!-- GRAPHS -->
 {% block scripts %}
 {{ super() }}
 
+
+<!-- Plots -->
+{% if calc.is_active %}
 <!-- Energy-Production -->
 <script type="text/javascript">
     const energy_output = {{ calc.output }}
@@ -332,6 +335,6 @@
         });
     });
 </script>
+{% endif %}
 
 {% endblock %}
-<!-- /Scripts for Plot -->
