@@ -15,7 +15,7 @@ Para ello solo necesitas ingresas tu ubicación (latitud y longitud), el espacio
 Solaru app se encuentra dividida en dos módulos principales:
 *   Módulo **App**: Maneja la lógica para crear la app y renderear las vistas.
 
-*   Módulo **Core**: Maneja toda la lógica de los cálculos necesarios. A su vez se encuentra diviido en:
+*   Módulo **Core**: Maneja toda la lógica de los cálculos necesarios. A su vez se encuentra dividido en:
     -   **enviroment**: Determina el impacto ambiental positivo derivado del sistema fotovoltaico.
     -   **energy**: Que hace uso de la librería [PvLib](https://pvlib-python.readthedocs.io/en/stable/ "PvLib") para conectarse a la API de PVGIS y disponer de los datos climatológicos y solares necesarios. Además, se implementan una serie de funciones que determinan el tamaño del sistema y la energía que este podría producir.
     -   **financial**: Aquí se realizan los cálculos que determinan el beneficio económico y el costo del sistema.
