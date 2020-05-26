@@ -50,6 +50,31 @@ html .body {
 /* HEADER */
 
 
+/* INFO */
+
+#benefits figure {
+    height: 60%;
+}
+
+@media screen and (max-width:998px) {
+    #benefits figure {
+        height: auto;
+        max-height: 75%;
+    }
+}
+
+#benefits img {
+    max-width: 180px;
+    max-height: 180px;
+}
+
+#benefits .sun-benefit {
+    margin-bottom: 1rem;
+}
+
+/* INFO */
+
+
 /* CARD */
 
 #app {
