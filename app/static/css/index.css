@@ -58,11 +58,18 @@ html .body {
 }
 
 #benefits figure {
+<<<<<<< HEAD:app/static/css/styles.css
     height: 60%;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+=======
+    height: 65%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+>>>>>>> 2bbb0a014b95abbd18fd5bd62035f67f7953c15d:app/static/css/index.css
 }
 
 @media screen and (max-width:998px) {
