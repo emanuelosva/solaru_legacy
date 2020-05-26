@@ -15,7 +15,7 @@ Para ello solo necesitas ingresas tu ubicación (latitud y longitud), el espacio
 La aplicación la puedes consultar [aquí](http://solaru.appspot.com "aquí") ya!
 
 ## Preview
-<img src="app/static/img/preview.png" width="600px">
+<img src="app/static/img/preview.PNG" width="600px">
 
 ### Notas
 Si el tema te gusta y quieres contribuir para convertir este proyecto en algo más grande, clonale y ponte en contacto conmigo 😎.
