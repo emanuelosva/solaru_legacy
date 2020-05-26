@@ -52,8 +52,12 @@ html .body {
 
 /* INFO */
 
+#benefits .sun-benefit {
+    margin-bottom: 1rem;
+}
+
 #benefits figure {
-    height: 60%;
+    height: 70%;
 }
 
 @media screen and (max-width:998px) {
@@ -68,8 +72,13 @@ html .body {
     max-height: 180px;
 }
 
-#benefits .sun-benefit {
-    margin-bottom: 1rem;
+.wrapper-text {
+    height: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* INFO */
