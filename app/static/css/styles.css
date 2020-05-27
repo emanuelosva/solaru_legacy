@@ -110,9 +110,8 @@ html .body {
 }
 
 #app .card-imput .form-group {
-    margin-bottom: 5px;
-    display: grid;
-    justify-content: left;
+    margin-bottom: 8px;
+    display: block;
 }
 
 #app .card-imput .form-control {
@@ -122,6 +121,11 @@ html .body {
 #app .card-imput .control-label {
     margin-right: 10px;
     margin-bottom: 2px;
+}
+
+#app .card-imput .btn {
+    width: 100%;
+    font-weight: 600;
 }
 
 #app .btn:hover {
