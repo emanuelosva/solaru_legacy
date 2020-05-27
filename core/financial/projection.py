@@ -30,9 +30,9 @@ def average_paymet_to_kwh_info(average_payment):
     """
 
     kWh_cost = 2.5
-    meanc_consume = average_payment / kWh_cost
+    mean_consume = average_payment / kWh_cost
 
-    return kWh_cost, meanc_consume
+    return kWh_cost, mean_consume
 
 
 def _savings(energy_by_month, kwh_cost):
