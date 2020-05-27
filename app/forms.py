@@ -67,13 +67,8 @@ class DataToCalcForm(FlaskForm):
         validators=[DataRequired(), is_positive, is_numeric]
     )
 
-    mean_consume = FloatField(
-        'Consumo medio [kWh]',
-        validators=[DataRequired(), is_positive, is_numeric]
-    )
-
-    kwh_cost = FloatField(
-        'Costo del kWh [MXN]',
+    average_payment_bim = FloatField(
+        'Pago promedio de electricidad al bimestre [$]',
         validators=[DataRequired(), is_positive, is_numeric]
     )
 
