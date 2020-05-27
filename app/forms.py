@@ -94,8 +94,7 @@ class DataToCalcForm(FlaskForm):
             'longitude': self.longitude.data,
             'width': self.width.data,
             'height': self.height.data,
-            'kwh_cost': self.kwh_cost.data,
-            'mean_consume': self.mean_consume.data,
+            'average_payment': self.average_payment_bim,
         }
 
         return data
