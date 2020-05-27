@@ -24,14 +24,15 @@
         <!-- Form -->
         <div class="container"></div>
         <div class="row">
-            <div class="col-12 col-md-4 col-xl-3">
+            <div id="form-desktop" class="col-12 col-lg-4 col-xl-3">
                 <div class="card card-imput pb-1 p-4 mb-3">
                     <h4 class="text-center mb-3">Ingresa tus datos</h4>
+                    <h6 class="text-muted text-center">Descubre tu sistema ideal.</h6>
                     <div class="separator mb-2"></div>
                     {{ wtf.quick_form(data_form) }}
                 </div>
             </div>
-            <div class="col-12 col-md-8 col-xl-9">
+            <div class="col-12 col-lg-8 col-xl-9">
                 <div class="container mt-5 ">
                     <h3 class="text-center">Descubre lo que el sol puede darte</h3>
                     <div id="benefits" class="container mt-5">
@@ -84,6 +85,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="form-mobile" class="col-12 col-lg-4 col-xl-3">
+                <div class="card card-imput pb-1 p-4 mb-3">
+                    <h4 class="text-center mb-3">Ingresa tus datos</h4>
+                    <h6 class="text-muted text-center">Descubre tu sistema ideal.</h6>
+                    <div class="separator mb-2"></div>
+                    {{ wtf.quick_form(data_form) }}
                 </div>
             </div>
         </div>
