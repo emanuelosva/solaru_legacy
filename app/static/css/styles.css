@@ -97,16 +97,16 @@ html .body {
     margin-bottom: 50px;
 }
 
-#app #form-mobile {
+#form-mobile {
     display: none;
 }
 
 @media screen and (max-width:1023px) {
-    #app #form-mobile {
+    #form-mobile {
         display: block;
     }
 
-    #app #form-desktop {
+    #form-desktop {
         display: none;
     }
 }
