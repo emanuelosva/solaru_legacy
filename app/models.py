@@ -6,6 +6,7 @@ import numpy as np
 # Local
 from core.enviroment.impact import co2_evited
 from core.report import financial_report, energy_report
+from core.financial.projection import average_paymet_to_kwh_info
 from core.energy.models import ERROR_PVGIS_REQUEST
 
 
@@ -19,8 +20,14 @@ class CalcActive:
     def __init__(self):
         self.is_active = False
 
-    def activate(self, latitude, longitude, width, height, kwh_cost, mean_consume):
+    def activate(self, latitude, longitude, width, height, average_payment):
+        """
+        Make all the calculations and save it in the object to show in template.
+        """
         self.is_active = True
+
+        kwh_cost, mean_consume = average_paymet_to_kwh_info(average_payment)
+
         self.get_info(
             latitude=latitude,
             longitude=longitude,
