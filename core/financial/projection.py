@@ -22,6 +22,19 @@ def financial_calc(energy_by_month, kwh_cost, module, inverter, system):
     return savings, time_return
 
 
+def average_paymet_to_kwh_info(average_payment):
+    """
+    Returns:
+        - The kWh cost.
+        - The amount of khW consumed in the period.
+    """
+
+    kWh_cost = 2.5
+    meanc_consume = average_payment / kWh_cost
+
+    return kWh_cost, meanc_consume
+
+
 def _savings(energy_by_month, kwh_cost):
     """
     Returns savings by month.
