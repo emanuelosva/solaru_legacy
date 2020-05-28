@@ -22,7 +22,7 @@ def financial_calc(energy_by_month, kwh_cost, module, inverter, system):
     return savings, time_return
 
 
-def average_paymet_to_kwh_info(average_payment):
+def average_paymet_to_kwh_info(average_payment, fee):
     """
     Returns:
         - The kWh cost.
@@ -32,12 +32,20 @@ def average_paymet_to_kwh_info(average_payment):
     .. [1] https://app.cfe.mx/Aplicaciones/CCFE/Tarifas/TarifasCRECasa/Tarifas/Tarifa1.aspx
     """
 
-    # Average limits in CFE fee
+    # DAC fee
+    DAC_fee = 4.34
+
+    # Average limits in others CFE fee(s)
     limit_energy = [128, 171]
 
     # Cost by limit of CFE fee(s)
     fee = [0.793, 1.13, 2.964]
 
+    # For DAC fee
+    if fee == 'DAC':
+        return DAC_fee, average_payment / DAC_fee
+
+    # For other fee
     count = average_payment
     cost = []
     consume = []
@@ -55,7 +63,9 @@ def average_paymet_to_kwh_info(average_payment):
         cost.append(fee[2] * count)
         consume.append(count/fee[2])
 
+    # Toal
     mean_consume = np.sum(np.array(consume))
+    # weighted average
     kWh_cost = np.mean(np.array(cost)) / mean_consume
 
     return kWh_cost, mean_consume

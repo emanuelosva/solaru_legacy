@@ -2,7 +2,7 @@
 
 # Flask
 from flask_wtf import FlaskForm
-from wtforms.fields import FloatField, SubmitField
+from wtforms.fields import FloatField, SubmitField, SelectField
 from wtforms.validators import DataRequired, ValidationError
 
 
@@ -72,6 +72,11 @@ class DataToCalcForm(FlaskForm):
         validators=[DataRequired(), is_positive, is_numeric]
     )
 
+    actual_fee = SelectField(
+        'Cúal es tu tarifa:',
+        choices=[('DAC', 'DAC'), ('other', 'Otra')]
+    )
+
     submit = SubmitField('Calcular')
 
     def is_valid(self):
@@ -95,6 +100,7 @@ class DataToCalcForm(FlaskForm):
             'width': self.width.data,
             'height': self.height.data,
             'average_payment': self.average_payment_bim.data,
+            'fee': self.actual_fee.data,
         }
 
         return data

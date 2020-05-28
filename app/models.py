@@ -20,13 +20,16 @@ class CalcActive:
     def __init__(self):
         self.is_active = False
 
-    def activate(self, latitude, longitude, width, height, average_payment):
+    def activate(self, latitude, longitude, width, height, average_payment, fee):
         """
         Make all the calculations and save it in the object to show in template.
         """
         self.is_active = True
 
-        kwh_cost, mean_consume = average_paymet_to_kwh_info(average_payment)
+        kwh_cost, mean_consume = average_paymet_to_kwh_info(
+            average_payment,
+            fee
+        )
 
         self.get_info(
             latitude=latitude,
