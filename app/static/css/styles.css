@@ -156,7 +156,7 @@ html .body {
     font-weight: 400;
     color: white;
     border-radius: 8px;
-    border-color: #000;
+    border: none;
     background-image: linear-gradient(#EB8826, #eb6e22);
 }
 
