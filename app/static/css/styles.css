@@ -78,7 +78,7 @@ html .body {
 }
 
 .wrapper-text {
-    height: 40%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -112,6 +112,7 @@ html .body {
 }
 
 #app .card {
+    margin-top: 1rem;
     border-radius: 5px;
     background-color: black;
 }
