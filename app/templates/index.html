@@ -29,6 +29,12 @@
                     <h4 class="text-center mb-3">Ingresa tus datos</h4>
                     <h6 class="text-muted text-center">Descubre tu sistema ideal.</h6>
                     <div class="separator mb-2"></div>
+                    <div class="wrapper-button">
+                        <button id="geoloc" class="btn-geo" onclick="geoFindMe()">
+                            Acceder a tu ubicación
+                        </button>
+                        <div id="out"></div>
+                    </div>
                     {{ wtf.quick_form(data_form) }}
                 </div>
             </div>
@@ -92,6 +98,12 @@
                     <h4 class="text-center mb-3">Ingresa tus datos</h4>
                     <h6 class="text-muted text-center">Descubre tu sistema ideal.</h6>
                     <div class="separator mb-2"></div>
+                    <div class="wrapper-button">
+                        <button id="geoloc" class="btn-geo" onclick="geoFindMe()">
+                            Acceder a tu ubicación
+                        </button>
+                        <div id="out"></div>
+                    </div>
                     {{ wtf.quick_form(data_form) }}
                 </div>
             </div>
