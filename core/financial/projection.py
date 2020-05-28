@@ -27,10 +27,36 @@ def average_paymet_to_kwh_info(average_payment):
     Returns:
         - The kWh cost.
         - The amount of khW consumed in the period.
+
+    References:
+    .. [1] https://app.cfe.mx/Aplicaciones/CCFE/Tarifas/TarifasCRECasa/Tarifas/Tarifa1.aspx
     """
 
-    kWh_cost = 2.5
-    mean_consume = average_payment / kWh_cost
+    # Average limits in CFE fee
+    limit_energy = [128, 171]
+
+    # Cost by limit of CFE fee(s)
+    fee = [0.793, 1.13, 2.964]
+
+    count = average_payment
+    cost = []
+    consume = []
+
+    for i in range(2):
+        if limit_energy[i] * fee[i] < count:
+            cost.append(fee[i] * limit_energy[i])
+            consume.append(limit_energy[i])
+            count -= limit_energy[i]
+        else:
+            cost.append(fee[i] * limit_energy[i])
+            consume.append(count/fee[i])
+
+    if count > 0:
+        cost.append(fee[2] * count)
+        consume.append(count/fee[2])
+
+    mean_consume = np.sum(np.array(consume))
+    kWh_cost = np.mean(np.array(cost)) / mean_consume
 
     return kWh_cost, mean_consume
 
