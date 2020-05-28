@@ -59,7 +59,7 @@ html .body {
 
 #benefits figure {
     height: 60%;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,20 +95,6 @@ html .body {
 #app {
     margin-top: 50px;
     margin-bottom: 50px;
-}
-
-#form-mobile {
-    display: none;
-}
-
-@media screen and (max-width:1023px) {
-    #form-mobile {
-        display: block;
-    }
-
-    #form-desktop {
-        display: none;
-    }
 }
 
 #app .card {
