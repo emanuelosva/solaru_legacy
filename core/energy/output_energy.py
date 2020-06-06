@@ -17,26 +17,31 @@ MODULE = 'SunPower_SPR_305_WHT___2009_'
 PTC_POWER_MODULE = 0.3  # kWp
 
 # Inverter options
-INVERTER_OPTS = {
-    'up_to_40000_w': {
-        'name': 'ABB__PVI_CENTRAL_50_US__480V_',
-        'power': 50000
-    },
-    'up_to_20000_w': {
-        'name': 'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_',
-        'power': 27650
-    },
-    'up_to_10000_w': {
-        'name': 'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_',
-        'power': 8750
-    },
-    'up_to_4000_w': {
-        'name': 'ABB__PVI_3_0_OUTD_S_US_A__240V_',
-        'power': 3000
-    },
-    'micro_inverter': {
+INVERTERS_INF0 = {
+    'ABB__MICRO_0_3_I_OUTD_US_240__240V_': {
         'name': 'ABB__MICRO_0_3_I_OUTD_US_240__240V_',
-        'power': 300
+        'normal_name': 'ABB-MICRO_240V',
+        'power': 300,
+    },
+    'ABB__PVI_3_0_OUTD_S_US_A__240V_': {
+        'name': 'ABB__PVI_3_0_OUTD_S_US_A__240V_',
+        'normal_name': 'ABB-ABB_PVI_240V',
+        'power': 3000,
+    },
+    'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_': {
+        'name': 'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_',
+        'normal_name': 'ABB-ABB_UNO_240V',
+        'power': 9000,
+    },
+    'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_': {
+        'name': 'ABB__UNO_8_6_TL_OUTD_S_US_A__240V_',
+        'normal_name': 'ABB-ABB_UNO_240V',
+        'power': 27000,
+    },
+    'ABB__PVI_CENTRAL_50_US__480V_': {
+        'name': 'ABB__PVI_CENTRAL_50_US__480V_',
+        'normal_name': 'ABB_PVI_CENTRAL_480V',
+        'power': 50000,
     },
 }
 
@@ -240,23 +245,23 @@ def _choose_inverter(TotalPower):
     """
 
     if TotalPower >= 40000:
-        _inverter = INVERTER_OPTS['up_to_40000_w']['name']
-        inverter_power = INVERTER_OPTS['up_to_40000_w']['power']
+        _inverter = INVERTERS_INF0['ABB__PVI_CENTRAL_50_US__480V_']['name']
+        inverter_power = INVERTERS_INF0['ABB__PVI_CENTRAL_50_US__480V_']['power']
 
     elif TotalPower >= 20000:
-        _inverter = INVERTER_OPTS['up_to_20000_w']['name']
-        inverter_power = INVERTER_OPTS['up_to_20000_w']['power']
+        _inverter = INVERTERS_INF0['ABB__UNO_8_6_TL_OUTD_S_US_A__240V_']['name']
+        inverter_power = INVERTERS_INF0['ABB__UNO_8_6_TL_OUTD_S_US_A__240V_']['power']
 
     elif TotalPower >= 10000:
-        _inverter = INVERTER_OPTS['up_to_10000_w']['name']
-        inverter_power = INVERTER_OPTS['up_to_10000_w']['power']
+        _inverter = INVERTERS_INF0['ABB__UNO_8_6_TL_OUTD_S_US_A__240V_']['name']
+        inverter_power = INVERTERS_INF0['ABB__UNO_8_6_TL_OUTD_S_US_A__240V_']['power']
 
     elif TotalPower >= 4000:
-        _inverter = INVERTER_OPTS['up_to_4000_w']['name']
-        inverter_power = INVERTER_OPTS['up_to_4000_w']['power']
+        _inverter = INVERTERS_INF0['ABB__PVI_3_0_OUTD_S_US_A__240V_']['name']
+        inverter_power = INVERTERS_INF0['ABB__PVI_3_0_OUTD_S_US_A__240V_']['power']
 
     else:
-        _inverter = INVERTER_OPTS['micro_inverter']['name']
-        inverter_power = INVERTER_OPTS['micro_inverter']['power']
+        _inverter = INVERTERS_INF0['ABB__MICRO_0_3_I_OUTD_US_240__240V_']['name']
+        inverter_power = INVERTERS_INF0['ABB__MICRO_0_3_I_OUTD_US_240__240V_']['power']
 
     return _inverter, inverter_power
