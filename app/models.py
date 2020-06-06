@@ -8,6 +8,7 @@ from core.enviroment.impact import co2_evited
 from core.report import financial_report, energy_report
 from core.financial.projection import average_paymet_to_kwh_info
 from core.energy.models import ERROR_PVGIS_REQUEST
+from core.energy.output_energy import INVERTERS_INF0, PTC_POWER_MODULE
 
 
 # Models
@@ -50,8 +51,11 @@ class CalcActive:
 
         self.num_modules = self.energy['array']['module'][0]
         self.name_modules = self.energy['array']['module'][1]
+        self.power_modules = PTC_POWER_MODULE * 1000
+
         self.num_inverters = self.energy['array']['inverter'][0]
         self.name_inverter = self.energy['array']['inverter'][1]
+        self.power_inverter = INVERTERS_INF0[self.name_inverter]['power']
 
         self.consume = mean_consume*6
         self.total_cost = self.consume*kwh_cost
