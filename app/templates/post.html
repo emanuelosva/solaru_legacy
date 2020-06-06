@@ -10,7 +10,7 @@
     <div class="container">
         {% if calc.is_active %}
         <div class="row">
-            <div class="col-12 col-md-4 col-xl-3">
+            <div id="card-info" class="col-12 col-md-5 col-xl-4">
                 <div class="card card-imput pb-1 p-4 mb-3">
                     <div class="container mb-2 p-0 text-center">
                         <h3 class="m-0">Resultados</h3>
@@ -33,69 +33,26 @@
                         </a>
                     </div>
                 </div>
-                <div class="card pb-1 p-4 mb-3 d-none d-md-flex">
-                    <div class="container text-center">
-                        <h5 class="mb-4">Información adicional</h5>
-                    </div>
-                    <div class="container text-left">
-                        <p>El cálculo es aproximado, pues se contemplan
-                            modulos e inversores típicos es necesario
-                            que contemplemos más variables para ofrecerte
-                            la mejor solución adaptada a tus necesidades.
-                        </p>
-                    </div>
-                    <div class="container mt-2 p-1 d-flex justify-content-around">
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-info bg-solaru">Ya quiero mi sitema</a>
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn btn-info btn-outline-light">Solo echaré un vistazo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="col-12 col-md-8 col-xl-9">
-                <div class="row">
-                    <div class="col-12 col-md-7 col-lg-8">
-                        <div id="savings-plot"></div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <div class="container text-center">
-                            <div id="savings-pie" class="plot"></div>
-                        </div>
-                    </div>
+            <div id="sytem-info" class="col-12 col-md-7 col-xl-8">
+
+            </div>
+            <div id="plots" class="col-12">
+                <div class="container mt-5 mb-5">
+                    <h3 class="text-center">
+                        Resumen de desempeño
+                    </h3>
+                    <div class="division"></div>
                 </div>
                 <div class="row">
-                    <div class="col p-5 pt-0">
-                        <div id="energy-production"></div>
+                    <div class="col-12 col-md-7 col-lg-8 pb-5">
+                        <div id="savings-plot" class="plot"></div>
                     </div>
-                </div>
-                <div class="card pb-1 p-4 mb-3 d-flex d-md-none">
-                    <div class="container text-center">
-                        <h5 class="mb-4">Información adicional</h5>
+                    <div class="col-12 col-md-5 col-lg-4 pb-5">
+                        <div id="savings-pie" class="plot"></div>
                     </div>
-                    <div class="container text-left">
-                        <p>El cálculo es aproximado, pues se contemplan
-                            modulos e inversores típicos es necesario
-                            que contemplemos más variables para ofrecerte
-                            la mejor solución adaptada a tus necesidades.
-                        </p>
-                    </div>
-                    <div class="container mt-2 p-1 d-flex justify-content-around">
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-info bg-solaru">
-                                    Ya quiero mi sitema
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn btn-info btn-outline-light">
-                                    Solo echaré un vistazo
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-12 pb-5">
+                        <div id="energy-production" class="plot"></div>
                     </div>
                 </div>
             </div>
@@ -160,7 +117,6 @@
             },
             title: {
                 text: 'Energía producida por tu sistema',
-                x: -20, //center
                 style: {
                     color: "white"
                 },
@@ -174,7 +130,10 @@
             },
             yAxis: {
                 title: {
-                    text: 'Energía (kWh)'
+                    text: 'Energía (kWh)',
+                    style: {
+                        color: "white"
+                    },
                 },
                 plotLines: [{
                     value: 0,
@@ -183,7 +142,7 @@
                 }]
             },
             tooltip: {
-                valueSuffix: 'kWh'
+                valueSuffix: ' kWh'
             },
             legend: {
                 enabled: false
@@ -194,7 +153,6 @@
                         symbol: 'circle',
                     },
                     data: energy_output,
-                    // color: '#ff8267'
                     color: '#eb8726'
                 }]
         });
@@ -211,8 +169,7 @@
                 backgroundColor: 'transparent'
             },
             title: {
-                text: 'Ahorro Potencial (MXN.)',
-                x: -20, //center,
+                text: 'Ahorro Potencial (MXN)',
                 style: {
                     color: "white"
                 },
@@ -221,8 +178,10 @@
                 enabled: false
             },
             subtitle: {
-                text: 'Lo que dejas de pagar por mes',
-                x: -20
+                text: "Lo que dejas de pagar por mes",
+                style: {
+                    color: "white"
+                }
             },
             legend: {
                 enabled: false
@@ -236,10 +195,10 @@
             },
             yAxis: {
                 title: {
-                    text: 'Ahorro (MXN)'
-                },
-                style: {
-                    color: "white"
+                    text: 'Ahorro (MXN)',
+                    style: {
+                        color: "white"
+                    }
                 },
                 plotLines: [{
                     value: 0,
@@ -247,13 +206,9 @@
                 }]
             },
             tooltip: {
-                valueSuffix: 'MXN'
+                valueSuffix: ' MXN'
             },
             series: [
-                // {
-                //     name: 'Ventas',
-                //     data: [85.36, 92.55, 79.55, 125.25, 180.35, 210.55, 250.25, 260.55, 203.35, 108.35, 130.95, 90.65]
-                // },
                 {
                     type: 'column',
                     data: savings,
