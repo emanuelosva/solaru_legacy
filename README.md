@@ -1,8 +1,9 @@
 <img src="app/static/img/favicon.png" width="200" >
 
 # Solaru App
-Solaru App es una aplicación web escrita en Python, pensada para calcular un sistema fotovoltáico diseñado específicamente a las condiciones de tu hogar ☀.
-Para ello solo necesitas ingresas tu ubicación (latitud y longitud), el espacio disponible, tu consumo promedio de energía y el costo del kWh para realizar el análisis económico.
+Solaru App es una aplicación WebApp escrita en Python, pensada para calcular un sistema fotovoltáico diseñado específicamente a las condiciones de tu hogar ☀.
+Para ello solo necesitas ingresas tu ubicación, el espacio disponible con el que cuentas y que ocuparía tu sistema y tu costo promedio de energía en un periodo.
+> (Su uso está dirigído por ahora a México.)
 
 ## Tecnologías
 | Backend  |  Frontend  |
@@ -27,7 +28,7 @@ Solaru app se encuentra dividida en dos módulos principales:
 
 
 ## Pruébala ahora
-La aplicación la puedes consultar [aquí](https://solaru.ue.r.appspot.com/ "aquí") ya!
+La aplicación la puedes consultar [**aquí**](https://solaru.ue.r.appspot.com/ "aquí") ya!
 
 ## Preview
 <img src="app/static/img/preview.PNG" width="600px">
