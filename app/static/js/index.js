@@ -1,8 +1,16 @@
 // Pricipal DOM elements
-const geoLoc = document.getElementById('geoloc')
 const ouput = document.getElementById('out')
-const inLatitude = document.getElementById('latitude')
-const inLongitude = document.getElementById('longitude')
+
+if (window.matchMedia('max-width: 1023px').matches) {
+    var geoLoc = document.getElementsByName('geoloc')[1]
+    var inLatitude = document.getElementsByName('latitude')[1]
+    var inLongitude = document.getElementsByName('longitude')[1]
+} else {
+    var geoLoc = document.getElementsByName('geoloc')[0]
+    var inLatitude = document.getElementsByName('latitude')[0]
+    var inLongitude = document.getElementsByName('longitude')[0]
+}
+
 
 // Auxiliar functions
 const success = (location) => {

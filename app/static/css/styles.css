@@ -97,6 +97,20 @@ html .body {
     margin-bottom: 50px;
 }
 
+#app #mobileForm {
+    display: none;
+}
+
+@media screen and (max-width:1023px) {
+    #app #mobileForm {
+        display: block;
+    }
+
+    #app #desktopForm {
+        display: none;
+    }
+}
+
 #app .card {
     margin-top: 1rem;
     border-radius: 5px;
