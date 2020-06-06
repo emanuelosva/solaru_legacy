@@ -18,7 +18,7 @@ html .body {
 }
 
 .division {
-    width: 90%;
+    width: 100%;
     height: 1px;
     margin: 0.5em auto 0 auto;
     background-image: linear-gradient(#EB8826, #EB4E1E);
@@ -181,6 +181,54 @@ html .body {
 
 /*  CARD */
 
+/* RESULTS */
+
+#app #systemInfo {
+    margin-top: 15px;
+    display: grid;
+}
+
+#app .wrapperResult {
+    margin: 0.7em 0;
+    display: flex;
+    align-items: center;
+}
+
+#app .wrapperResult figure {
+    width: 100px;
+}
+
+#app .wrapperResult img {
+    width: 100%;
+}
+
+#app .wrapperResult-info {
+    margin-left: 20px;
+}
+
+#app .wrapperResult-info .subResult {
+    font-weight: 600;
+}
+
+#app .wrapperResult-info p {
+    margin: 0;
+}
+
+@media screen and (min-width: 1025px) {
+    #app #systemInfo {
+        padding-left: 6em;
+    }
+
+    #app .wrapperResult figure {
+        width: 120px;
+    }
+
+    #app .wrapperResult-info {
+        margin-left: 50px;
+    }
+}
+/* RESULTS */
+
 
 /* PLOTS */
 
@@ -189,15 +237,6 @@ html .body {
 }
 
 /* PLOTS */
-
-
-/* MODAL */
-
-.modal {
-    color: black;
-}
-
-/* MODAL */
 
 
 /* FOOTER */
