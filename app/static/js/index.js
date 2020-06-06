@@ -1,7 +1,7 @@
 // Pricipal DOM elements
 const ouput = document.getElementById('out')
 
-if (window.matchMedia('max-width: 1023px').matches) {
+if (window.matchMedia('(max-width: 1023px)').matches) {
     var geoLoc = document.getElementsByName('geoloc')[1]
     var inLatitude = document.getElementsByName('latitude')[1]
     var inLongitude = document.getElementsByName('longitude')[1]
