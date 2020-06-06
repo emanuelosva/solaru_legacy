@@ -17,6 +17,13 @@ html .body {
     background-image: linear-gradient(#2e2e2e, grey);
 }
 
+.division {
+    width: 90%;
+    height: 1px;
+    margin: 0.5em auto 0 auto;
+    background-image: linear-gradient(#EB8826, #EB4E1E);
+}
+
 /* BASE */
 
 

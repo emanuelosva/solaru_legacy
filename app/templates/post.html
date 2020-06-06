@@ -7,15 +7,15 @@
 {% block content %}
 <!-- /Main info -->
 <section id="app">
-    <div class="container-fluid pr-2 pl-2 pr-md-4 pl-md-4 pl-lg-5 pr-lg-5">
-        <div class="container"></div>
+    <div class="container">
+        {% if calc.is_active %}
         <div class="row">
             <div class="col-12 col-md-4 col-xl-3">
                 <div class="card card-imput pb-1 p-4 mb-3">
-                    {% if calc.is_active %}
-                    <div class="container p-0 text-center">
+                    <div class="container mb-2 p-0 text-center">
                         <h3 class="m-0">Resultados</h3>
-                        <div class="text-muted">(Anual)</div>
+                        <div class="">(Valores Anuales)</div>
+                        <div class="division"></div>
                     </div>
                     <div class="container text-left mt-2">
                         <p>Esta es la oportunidad que el sol te presenta,
@@ -31,15 +31,8 @@
                         <a class="btn bg-solaru p-1" href="{{ url_for('index') }}">
                             Nuevo cálculo
                         </a>
-                        <div class="container text-center mt-3">
-                            <button class="more-info" data-toggle="modal" data-target="#extra-info-modal">
-                                Más información
-                            </button>
-                        </div>
                     </div>
-                    {% endif %}
                 </div>
-                {% if calc.is_active %}
                 <div class="card pb-1 p-4 mb-3 d-none d-md-flex">
                     <div class="container text-center">
                         <h5 class="mb-4">Información adicional</h5>
@@ -62,10 +55,8 @@
                         </div>
                     </div>
                 </div>
-                {% endif %}
             </div>
             <div class="col-12 col-md-8 col-xl-9">
-                {% if calc.is_active %}
                 <div class="row">
                     <div class="col-12 col-md-7 col-lg-8">
                         <div id="savings-plot"></div>
@@ -107,9 +98,9 @@
                         </div>
                     </div>
                 </div>
-                {% endif %}
             </div>
         </div>
+        {% endif %}
     </div>
 </section>
 <!-- /Main info -->
