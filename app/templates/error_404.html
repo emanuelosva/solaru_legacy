@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="container text-center p-5">
+    <br><br><br>
+    <h1 class="mt-5">Lo sentimos... 😕</h1>
+    <p>No encontramos lo que buscabas.</p>
+    <a href="{{ url_for('index') }}">Regresa a Solaru =)</a>
+    <figure class="mt-5">
+      <img src="{{ url_for('static', filename='./img/logo-white-lema.png') }}" alt="Logo" class="img-fluid">
+    </figure>
+    <br><br><br>
+  </div>
+</section>
+{% endblock %}

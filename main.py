@@ -1,7 +1,7 @@
 """Entry point for Solaru App."""
 
 # Flask
-from flask import redirect, render_template, url_for, make_response
+from flask import render_template, url_for
 
 # Local
 from app import app_factory
@@ -10,6 +10,21 @@ from app.models import CalcActive
 
 # Create app
 app = app_factory()
+
+
+# Error handlers
+@app.errorhandler(404)
+def not_fount(error):
+    """Return template for not found URL"""
+
+    return render_template('error_404.html', error=error)
+
+
+@app.errorhandler(500)
+def not_fount(error):
+    """Return template for not found URL"""
+    
+    return render_template('error_500.html', error=error)
 
 
 # Principal view
