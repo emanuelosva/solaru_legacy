@@ -28,7 +28,7 @@ Solaru app se encuentra dividida en dos módulos principales:
 
 
 ## Pruébala ahora
-La aplicación la puedes consultar [**aquí**](https://solaru.ue.r.appspot.com/ "aquí") ya!
+La aplicación la puedes consultar [**aquí**](https://solaruapp.herokuapp.com/ "aquí") ya!
 
 ## Preview
 <img src="app/static/img/preview.PNG" width="600px">
