@@ -1,4 +1,2 @@
 *.cpython-37.pyc
-app/config
-init.bat
-.gcloudignore
+.vscode
