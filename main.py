@@ -21,9 +21,9 @@ def not_fount(error):
 
 
 @app.errorhandler(500)
-def not_fount(error):
+def server_error(error):
     """Return template for not found URL"""
-    
+
     return render_template('error_500.html', error=error)
 
 

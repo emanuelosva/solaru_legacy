@@ -57,7 +57,7 @@ def output_power(latitude, longitude, width, height):
     """
 
     # Get solar info
-    solar_info = solar_radiation(latitude, latitude)
+    solar_info = solar_radiation(latitude, longitude)
 
     # Get the module propertys
     module = Module()
