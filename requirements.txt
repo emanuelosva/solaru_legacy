@@ -7,6 +7,6 @@ numpy==1.18.4
 pandas==1.0.3
 pvlib==0.7.2
 timezonefinder==4.4.0
-werkzeug==2.0.0
+werkzeug==2.2.3
 jinja2~=3.0.3
 gunicorn
